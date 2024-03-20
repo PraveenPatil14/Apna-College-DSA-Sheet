@@ -1,0 +1,26 @@
+class Solution {
+    public boolean isPalindrome(String s) {
+        // Convert the string to lowercase
+        String lowerCaseStr = s.toLowerCase();
+        
+        // Remove non-alphanumeric characters
+        StringBuilder alphanumericStr = new StringBuilder();
+        for(int i=0;i<lowerCaseStr.length();i++){
+            if (Character.isLetterOrDigit(lowerCaseStr.charAt(i))) {
+                alphanumericStr.append(lowerCaseStr.charAt(i));
+            }
+        }
+        
+        // Check if the alphanumeric string is a palindrome
+        int left = 0;
+        int right = alphanumericStr.length() - 1;
+        while (left < right) {
+            if (alphanumericStr.charAt(left) != alphanumericStr.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+}
