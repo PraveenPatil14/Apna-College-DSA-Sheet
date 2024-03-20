@@ -1,13 +1,14 @@
+// Sloution2-using string builder
 class Solution {
     public boolean isPalindrome(String s) {
         // Convert the string to lowercase
-        String lowerCaseStr = s.toLowerCase();
+        String lowerCaseStr = s.toLowerCase();  // convert the string to lowercase using function - toLowerCase()
         
         // Remove non-alphanumeric characters
         StringBuilder alphanumericStr = new StringBuilder();
         for(int i=0;i<lowerCaseStr.length();i++){
             if (Character.isLetterOrDigit(lowerCaseStr.charAt(i))) {
-                alphanumericStr.append(lowerCaseStr.charAt(i));
+                alphanumericStr.append(lowerCaseStr.charAt(i));  // append the alpha numeric characters to the string builder
             }
         }
         
