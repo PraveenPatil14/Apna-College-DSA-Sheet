@@ -1,16 +1,17 @@
+//Solution1- without using string builder 
 import java.util.*;
 public class Main
 {
     public static boolean validpalindrome(String str){
-        String S = str.toLowerCase();
-        String str1 = "";
-        for(int i=0;i<S.length();i++){
-            if(Character.isLetterOrDigit(S.charAt(i)))
-            str1 = str1 + S.charAt(i);
+        String S = str.toLowerCase(); // convert the given string into lower case
+        String str1 = "";     // initialize the empty string
+        for(int i=0;i<S.length();i++){           // iterate string to take only letters and numbers, eliminate all other characters 
+            if(Character.isLetterOrDigit(S.charAt(i)))  // function to check letter or number - isLetterOrDigit() 
+            str1 = str1 + S.charAt(i);  // add the string to the old string
         }
-        int n = str1.length() - 1;
+        int n = str1.length() - 1;  // run a loop to check whether first and last characters are same or not of new string 
         for(int i=0;i<str1.length()/2;i++){
-            if(str1.charAt(i) != str1.charAt(n-i))
+            if(str1.charAt(i) != str1.charAt(n-i)) // n-i bcz we are decrementing the last character each time
                 return false;
         }
         return true;
